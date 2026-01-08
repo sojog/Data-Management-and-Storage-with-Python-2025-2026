@@ -8,9 +8,9 @@ class Lotto:
     def genereaza_numar(self):
         return random.randint(self.min, self.max)
     
-    def genereaza_6_numere(self):
+    def genereaza_n_numere(self, n):
         numere = []
-        while len(numere) < 6:
+        while len(numere) < n:
             nr_nou = self.genereaza_numar()
             if nr_nou not in numere:
                 numere.append(nr_nou)
@@ -18,7 +18,7 @@ class Lotto:
 
 
 extragere = Lotto(1, 49)
-numere = extragere.genereaza_6_numere()
+numere = extragere.genereaza_n_numere(11)
 print(numere)
 
 numere = [ f"{i}\n" for i in numere ]
