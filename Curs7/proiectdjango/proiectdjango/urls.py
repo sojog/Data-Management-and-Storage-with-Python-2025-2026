@@ -34,13 +34,15 @@ def random_joke_view(request):
     return HttpResponse(joke) 
 
 
+from applicationdjango.views import ip_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('glume/<category>/', jokes_view),
     path('chuck/', chuck_view),
-
-
-    path('', random_joke_view)
+    path('', random_joke_view),
+    path('ip', ip_view),
+    
 
 ]
